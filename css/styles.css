@@ -1,4 +1,6 @@
 * {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -12,57 +14,67 @@ body {
     width: 100%;
     justify-content: center;
 }
+
 .container {
     justify-content: center;
     display: grid;
-    grid-template-columns: 100px 300px 100px;
+    grid-template-columns: 200px 300px 200px;
 }
 
 .hidden {
     display: none;
 }
 
+.disabled {
+    pointer-events: none;
+}
+
 #play {
-    /* display: block; */
     width: 100%;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#playButton {
+    font-size: 3rem;
+    padding: 1rem;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    font-family: 'Nunito';
+    align-self: center;
 }
 
 .blurred {
     filter: blur(6px);
-    /* position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0; */
     background-color: black;
     opacity: 0.5;
+    pointer-events: none;
 }
 
 h1 {
     font-size: 4rem;
     text-align: center;
     padding-top: 3rem;
+    margin-top: 5rem;
+
 }
 
 .grid-container {
-    /* align-items: center; */
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
-    /* background: blue; */
     margin: 7rem auto;
     padding: 10px;
     width: 60%;
-    /* height: 80%; */
     text-align: center;
 }
 
 .square {
     font-size: 4rem;
-    /* margin: 0 auto; */
-    /* align-items: center; */
 }
 
 .squareFilled {

@@ -67,14 +67,31 @@ class TicTacToeGame {
             parentDiv.removeChild(childDiv)
         }
     }
+    hidePlayButton() {
+        document.querySelector('#playButton').classList.add('hidden')
+    }
+    toggleGameBlur() {
+        document.querySelector('.container').classList.toggle('blurred')
+    }
+    listenForSquarePlay() {
+        let squares = document.querySelectorAll('.square')
+        console.log(squares)
+        // for (i=0; i<squares.length; i++) {
+        //     squares[i].addEventListener('click', (e) => this.fillSquare(e))
+        // }
+        for (square of squares) {
+            console.log(square)
+        }
+    }
 }
 
 document.querySelector('#playButton').addEventListener('click', playGame)
 
 function playGame() {
-    document.querySelector('#play').classList.toggle('hidden') //hides the button
-    document.querySelector('.container').classList.toggle('blurred') //unblurs game container
     let game = new TicTacToeGame('X', 'O')
+    game.hidePlayButton()
+    game.toggleGameBlur()
+    // game.listenForSquarePlay()
     let squares = document.querySelectorAll('.square')
     for (i=0; i<squares.length; i++)  {
         squares[i].addEventListener('click', (e) => game.fillSquare(e))
