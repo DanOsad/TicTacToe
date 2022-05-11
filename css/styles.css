@@ -18,6 +18,27 @@ body {
     grid-template-columns: 100px 300px 100px;
 }
 
+.hidden {
+    display: none;
+}
+
+#play {
+    /* display: block; */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.blurred {
+    filter: blur(6px);
+    /* position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0; */
+    background-color: black;
+    opacity: 0.5;
+}
+
 h1 {
     font-size: 4rem;
     text-align: center;

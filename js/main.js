@@ -20,30 +20,6 @@ class TicTacToeGame {
             [ 2 , 4 , 6],
         ]
     }
-    switchPlayer() {
-        return this.currentPlayer == this.playerOne 
-        ? this.currentPlayer = this.playerTwo 
-        : this.currentPlayer = this.playerOne
-    }
-    checkWin() {
-        if ( this.won == false ) {
-            for ( i=0; i<this.winConditions.length; i++) {
-                if ( this.board[this.winConditions[i][0]] == 'X' 
-                    && this.board[this.winConditions[i][1]] == 'X'
-                    && this.board[this.winConditions[i][2]] == 'X' ) {
-                        this.won = true
-                        this.clearBoard()
-                        alert('Player X wins!')
-                    } else if ( this.board[this.winConditions[i][0]] == 'O' 
-                    && this.board[this.winConditions[i][1]] == 'O'
-                    && this.board[this.winConditions[i][2]] == 'O' ) {
-                        this.won = true
-                        this.clearBoard()
-                        alert('Player O wins!')
-                    }
-            }
-        }
-    }
     fillSquare( e ) {
         const id = e.target.id
         if ( !this.board.id ) {
@@ -56,6 +32,33 @@ class TicTacToeGame {
         this.checkWin()
         this.switchPlayer()
     }
+    switchPlayer() {
+        return this.currentPlayer == this.playerOne 
+        ? this.currentPlayer = this.playerTwo 
+        : this.currentPlayer = this.playerOne
+    }
+    changeWinColor() {
+        // wanting to change the streak of 3 winning letters to another color
+    }
+    checkWin() {
+        if ( this.won == false ) {
+            for ( i=0; i<this.winConditions.length; i++) {
+                if ( this.board[this.winConditions[i][0]] == 'X' 
+                    && this.board[this.winConditions[i][1]] == 'X'
+                    && this.board[this.winConditions[i][2]] == 'X' ) {
+                        this.won = true
+                        // this.clearBoard()
+                        alert('Player X wins!')
+                    } else if ( this.board[this.winConditions[i][0]] == 'O' 
+                    && this.board[this.winConditions[i][1]] == 'O'
+                    && this.board[this.winConditions[i][2]] == 'O' ) {
+                        this.won = true
+                        // this.clearBoard()
+                        alert('Player O wins!')
+                    }
+            }
+        }
+    }
     clearBoard() {
         this.board = {}
         for ( i=0; i<=8; i++ ) { 
@@ -66,7 +69,11 @@ class TicTacToeGame {
     }
 }
 
+document.querySelector('#playButton').addEventListener('click', playGame)
+
 function playGame() {
+    document.querySelector('#play').classList.toggle('hidden') //hides the button
+    document.querySelector('.container').classList.toggle('blurred') //unblurs game container
     let game = new TicTacToeGame('X', 'O')
     let squares = document.querySelectorAll('.square')
     for (i=0; i<squares.length; i++)  {
