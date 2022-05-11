@@ -42,7 +42,7 @@ class TicTacToeGame {
     }
     checkWin() {
         if ( this.won == false ) {
-            for ( i=0; i<this.winConditions.length; i++) {
+            for ( let i=0; i<this.winConditions.length; i++) {
                 if ( this.board[this.winConditions[i][0]] == 'X' 
                     && this.board[this.winConditions[i][1]] == 'X'
                     && this.board[this.winConditions[i][2]] == 'X' ) {
@@ -61,7 +61,7 @@ class TicTacToeGame {
     }
     clearBoard() {
         this.board = {}
-        for ( i=0; i<=8; i++ ) { 
+        for ( let i=0; i<=8; i++ ) { 
             let parentDiv = document.getElementById(`${i}`)
             let childDiv = document.getElementsByClassName('squareFilled')
             parentDiv.removeChild(childDiv)
@@ -75,13 +75,7 @@ class TicTacToeGame {
     }
     listenForSquarePlay() {
         let squares = document.querySelectorAll('.square')
-        console.log(squares)
-        // for (i=0; i<squares.length; i++) {
-        //     squares[i].addEventListener('click', (e) => this.fillSquare(e))
-        // }
-        for (square of squares) {
-            console.log(square)
-        }
+        squares.forEach(square => square.addEventListener('click', (e) => this.fillSquare(e)))
     }
 }
 
@@ -91,9 +85,5 @@ function playGame() {
     let game = new TicTacToeGame('X', 'O')
     game.hidePlayButton()
     game.toggleGameBlur()
-    // game.listenForSquarePlay()
-    let squares = document.querySelectorAll('.square')
-    for (i=0; i<squares.length; i++)  {
-        squares[i].addEventListener('click', (e) => game.fillSquare(e))
-    }
+    game.listenForSquarePlay()
 }
