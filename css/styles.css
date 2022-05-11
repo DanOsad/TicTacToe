@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+/* main styling */
+
+body {
+    font-size: 62.5%;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    background-color: black;
+    width: 100%;
+    justify-content: center;
+}
+.container {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 100px 300px 100px;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.grid-container {
+    /* align-items: center; */
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    /* background: blue; */
+    margin: 7rem auto;
+    padding: 10px;
+    width: 60%;
+    /* height: 80%; */
+    text-align: center;
+}
+
+.square {
+    font-size: 4rem;
+    /* margin: 0 auto; */
+    /* align-items: center; */
+}
+
+.squareFilled {
+    padding-top: .5rem;
+    margin: 0 auto;
+}
+
+.squareFilled:hover {
+    background: black;
+}
+
+.squareFilled:active {
+    background: black;
+}
+
+.square:hover {
+    background: rgba(128,128,128,.5);
+    cursor: grab;
+}
+
+.square:active {
+    background: rgba(71, 126, 120, 0.9);
+    cursor: grabbing;
+}
+
+.top-row {
+    border-bottom: 5px solid white;
+}
+
+.bottom-row {
+    border-top: 5px solid white;
+}
+
+.right {
+    border-left: 5px solid white;
+}
+
+.left {
+    border-right: 5px solid white;
+}
