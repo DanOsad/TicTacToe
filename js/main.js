@@ -77,24 +77,25 @@ class TicTacToeGame {
         let squares = document.querySelectorAll('.square')
         squares.forEach(square => square.addEventListener('click', (e) => this.fillSquare(e)))
     }
-}
-
-// LIGHT MODE FUNCTIONALITY
-document.querySelector('#lightMode').addEventListener('click', lightMode)
-document.querySelector('#darkMode').addEventListener('click', darkMode)
-
-function lightMode() {
-    document.querySelector('#lightMode').classList.add('hidden')
-    document.querySelector('#darkMode').classList.remove('hidden')
-    document.querySelector(':root').style.setProperty('--main-bg-color', 'white')
-    document.querySelector(':root').style.setProperty('--secondary-color', 'black')
-}
-
-function darkMode() {
-    document.querySelector('#darkMode').classList.add('hidden')
-    document.querySelector('#lightMode').classList.remove('hidden')
-    document.querySelector(':root').style.setProperty('--main-bg-color', 'black')
-    document.querySelector(':root').style.setProperty('--secondary-color', 'white')
+    lightMode() {
+        document.querySelector('#lightMode').classList.add('hidden')
+        document.querySelector('#darkMode').classList.remove('hidden')
+        document.querySelector(':root').style.setProperty('--main-bg-color', 'white')
+        document.querySelector(':root').style.setProperty('--secondary-color', 'black')
+    }
+    darkMode() {
+        document.querySelector('#darkMode').classList.add('hidden')
+        document.querySelector('#lightMode').classList.remove('hidden')
+        document.querySelector(':root').style.setProperty('--main-bg-color', 'black')
+        document.querySelector(':root').style.setProperty('--secondary-color', 'white')
+    }
+    toggleLightMode() {
+        document.querySelector('#lightMode').addEventListener('click', this.lightMode)
+        document.querySelector('#darkMode').addEventListener('click', this.darkMode)
+    }
+    showLightDarkButton() {
+        document.querySelector('#lightDarkMode').style.setProperty('display', 'block')
+    }
 }
 
 // MAIN GAME FUNCTION
@@ -102,6 +103,8 @@ document.querySelector('#playButton').addEventListener('click', playGame)
 
 function playGame() {
     let game = new TicTacToeGame('X', 'O')
+    game.showLightDarkButton()
+    game.toggleLightMode()
     game.hidePlayButton()
     game.toggleGameBlur()
     game.listenForSquarePlay()
