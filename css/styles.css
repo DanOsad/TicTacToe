@@ -80,27 +80,27 @@ h1 {
     font-size: 4rem;
     text-align: center;
     padding-top: 3rem;
-    margin-top: 5rem;
+    margin-top: 4.5rem;
 
 }
 
 .grid-container {
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    margin: 7rem auto;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    margin: 5rem auto 2rem auto;
     padding: 10px;
     width: 60%;
     text-align: center;
 }
 
 .square {
-    font-size: 4rem;
+    font-size: 5.5rem;
 }
 
 .squareFilled {
-    padding-top: .5rem;
+    padding-top: 1rem;
     margin: 0 auto;
 }
 
