@@ -60,14 +60,17 @@ class TicTacToeGame {
         }
     }
     clearBoard() {
+        // NEED TO WORK ON RESETTING THE GAME
+        // console.log(this.board)
         this.board = {}
-        // for ( let i=0; i<=8; i++ ) { 
-        //     let parentDiv = document.getElementById(`${i}`)
-        //     let childDiv = document.getElementsByClassName('squareFilled')
-        //     parentDiv.removeChild(childDiv)
-        // }
+        // console.log(this.board)
         let nodeList = document.querySelectorAll('p')
         nodeList.forEach( element => element.remove() )
+        // this.toggleGameBlur()
+        // this.showPlayButton()
+    }
+    showPlayButton() {
+        document.querySelector('#playButton').classList.remove('hidden')
     }
     hidePlayButton() {
         document.querySelector('#playButton').classList.add('hidden')
