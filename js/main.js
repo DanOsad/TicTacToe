@@ -47,13 +47,13 @@ class TicTacToeGame {
                     && this.board[this.winConditions[i][1]] == 'X'
                     && this.board[this.winConditions[i][2]] == 'X' ) {
                         this.won = true
-                        // this.clearBoard()
+                        this.clearBoard()
                         alert('Player X wins!')
                     } else if ( this.board[this.winConditions[i][0]] == 'O' 
                     && this.board[this.winConditions[i][1]] == 'O'
                     && this.board[this.winConditions[i][2]] == 'O' ) {
                         this.won = true
-                        // this.clearBoard()
+                        this.clearBoard()
                         alert('Player O wins!')
                     }
             }
@@ -61,11 +61,13 @@ class TicTacToeGame {
     }
     clearBoard() {
         this.board = {}
-        for ( let i=0; i<=8; i++ ) { 
-            let parentDiv = document.getElementById(`${i}`)
-            let childDiv = document.getElementsByClassName('squareFilled')
-            parentDiv.removeChild(childDiv)
-        }
+        // for ( let i=0; i<=8; i++ ) { 
+        //     let parentDiv = document.getElementById(`${i}`)
+        //     let childDiv = document.getElementsByClassName('squareFilled')
+        //     parentDiv.removeChild(childDiv)
+        // }
+        let nodeList = document.querySelectorAll('p')
+        nodeList.forEach( element => element.remove() )
     }
     hidePlayButton() {
         document.querySelector('#playButton').classList.add('hidden')
