@@ -1,4 +1,3 @@
-
 class TicTacToeGame {
     constructor (playerOne, playerTwo) {
         this.board = {}
