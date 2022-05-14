@@ -61,13 +61,11 @@ class TicTacToeGame {
     }
     clearBoard() {
         // NEED TO WORK ON RESETTING THE GAME
-        // console.log(this.board)
         this.board = {}
-        // console.log(this.board)
         let nodeList = document.querySelectorAll('p')
         nodeList.forEach( element => element.remove() )
-        // this.toggleGameBlur()
-        // this.showPlayButton()
+        this.toggleGameBlur() // seems to cause doubling of <p> elements after first game
+        this.showPlayButton()
     }
     showPlayButton() {
         document.querySelector('#playButton').classList.remove('hidden')
